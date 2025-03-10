@@ -22,10 +22,25 @@ body {
     z-index: -1; /* Відправляємо шар на задній план */
 }
 
+/* Контейнер для логотипа */
+.logo-container {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+/* Логотип */
+.logo-container img {
+    width: 110px; /* Обмежуємо розмір */
+    height: auto;
+    border-radius: 50%; /* Кругла форма (якщо потрібно) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Легка тінь */
+}
+
 /* Шапка */
 header {
     background: rgb(0, 0, 0);
-    padding: 20px;
+    padding: 10px;
     text-align: center;
 }
 
@@ -226,55 +241,119 @@ iframe {
     margin-top: 20px;
 }
 
+/* Гарантуємо, що контент завжди після шапки */
+#media-page main {
+    margin-top: 20px; /* Відступ після header */
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 20vh; /* Мінімальна висота, щоб сторінка завжди прокручувалась */
+}
+
+/* Контейнер для всіх відео */
+.video-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Автоматично переносимо відео на нові ряди */
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* Контейнер кожного відео */
+.video-item {
+    width: calc(33.33% - 20px); /* Відео в 3 колонки */
+    max-width: 350px; /* Обмеження максимальної ширини */
+    text-align: center;
+}
+
+/* Відео-фрейми */
+.video-item iframe {
+    width: 100%;
+    height: 200px; /* Фіксована висота для всіх відео */
+    border: 5px solid gold;
+    border-radius: 10px;
+}
+
 
 /* Фон для сторінки "Медіа" */
 #media-page {
     background-image: url('images/media-bg.jpg');
     background-size: cover;
     background-position: center;
-
     background-attachment: fixed;
     color: white;
     text-align: center;
+
 }
 
-/* Контейнер */
-.media-container {
-    width: 80%;
-    max-width: 1000px;
-    margin: auto;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 30px;
-    border-radius: 10px;
+/* Видаляємо затемнення (забираємо контейнер .media-container) */
+
+.media-description {
+    text-align: center;
+    font-size: 20px;
+    max-width: 900px;
+    margin: 30px auto;
+    font-weight: bold;
 }
 
-/* Галерея відео */
-.video-gallery {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+/* Опис відео */
+.video-item p {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #FFD700; /* Золотистий текст */
 }
 
-.video-gallery iframe {
-    width: 45%;
-    height: 250px;
-    border-radius: 10px;
-    border: none;
-}
+/*  <div class="audio-gallery">
+    <div class="audio-item">
+      <audio controls>
+        <source src="media/classic-music.mp3" type="audio/mpeg">
+        Ваш браузер не підтримує аудіо.
+      </audio>
+      <p>🎵 **Класична музика для натхнення**</p>
+    </div>
+    <div class="audio-item">
+      <audio controls>
+        <source src="media/art-podcast.mp3" type="audio/mpeg">
+        Ваш браузер не підтримує аудіо.
+      </audio>
+      <p>🎤 **Подкаст про мистецтво** – цікаві історії про художників і їхні твори.</p>
+    </div>
+  </div>
 
-/* Галерея аудіо */
 .audio-gallery {
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
     margin-top: 20px;
+    padding: 20px;
 }
 
 .audio-gallery audio {
-    width: 45%;
+    width: 30%;
 }
 
+.audio-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+
+.audio-item audio {
+    width: 40%;
+}
+
+.audio-item p {
+    font-size: 16px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+*/
 /*додати лог зліва
 адаптація для телефону*/
