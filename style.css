@@ -31,7 +31,7 @@ body {
 
 /* Логотип */
 .logo-container img {
-    width: 110px; /* Обмежуємо розмір */
+    width: 100px; /* Обмежуємо розмір */
     height: auto;
     border-radius: 50%; /* Кругла форма (якщо потрібно) */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Легка тінь */
@@ -40,12 +40,16 @@ body {
 /* Шапка */
 header {
     background: rgb(0, 0, 0);
-    padding: 10px;
+    padding: 30px;
     text-align: center;
 }
 
+header h1 {
+    margin: 0 105px;
+}
+
 /* Навігація */
-nav ul {
+/*nav ul {
     list-style: none;
     padding: 0;
 }
@@ -53,7 +57,7 @@ nav ul {
 nav ul li {
     display: inline;
     margin: 0 15px;
-}
+}*/
 
 nav ul li a {
     color: white;
@@ -130,6 +134,7 @@ footer {
 
 /* Зображення */
 .about-img {
+    margin-top: 120px;
     width: 300px;
     border-radius: 10px;
     margin-right: 20px;
@@ -305,6 +310,35 @@ iframe {
     color: #FFD700; /* Золотистий текст */
 }
 
+/* Стилі для бургер-меню */
+.burger-menu {
+    display: none; /* Приховане на великих екранах */
+    font-size: 30px;
+    cursor: pointer;
+    background-color: #ff6600; /* Колір як у кнопки "Переглянути медіа" */
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+/* Ховаємо меню на малих екранах */
+nav {
+    display: flex;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    list-style: none;
+    margin: auto;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
 /*  <div class="audio-gallery">
     <div class="audio-item">
       <audio controls>
@@ -357,3 +391,208 @@ iframe {
 */
 /*додати лог зліва
 адаптація для телефону*/
+
+@media screen and (max-width: 600px) {
+    #contact-page {
+        background-image: url(images/contact-bg.jpg);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: white;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+    }
+
+    #media-page main {
+        margin-top: 20px;
+        padding: 10px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 20vh;
+        margin-left: -40px;
+    }
+
+    .burger-menu {
+        display: block; /* Показуємо бургер-меню */
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    /* Ховаємо меню за замовчуванням */
+    nav {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: rgb(0, 0, 0);
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    /* Коли меню відкрите */
+    nav.show {
+        display: block;
+    }
+
+    body {
+        font-size: 12px; /* Зменшення основного шрифту */
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center; /* Вирівнює логотип вертикально */
+    }
+
+    .logo-container img {
+        width: 80px; /* Зменшений розмір логотипа */
+        height: auto;
+        border-radius: 50%;
+    }
+
+    header {
+        display: flex;
+        align-items: center; /* Вирівнює логотип і заголовок по центру */
+        background: rgb(0, 0, 0);
+        padding: 20px;
+        gap: 10px; /* Відступ між елементами */    }
+
+    header h1 {
+        flex: 1; /* Дозволяє заголовку зайняти доступний простір */
+        color: white;
+        font-size: 20px;
+        text-align: center; /* Вирівнює текст по лівому краю */
+        margin: 0 120px; /* Додає відступ зліва */
+    }
+
+    .contact-header {
+        padding: 20px 40px;
+        gap: 100px;
+    }
+    /*nav ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }*/
+
+    .about-main {
+        margin-top: 0;
+    }
+
+    .about-img {
+        width: 300px;
+        margin-left: 20px;
+        margin-top: 0px;
+     }
+
+    .contact-main {
+        margin-top: 120px;
+        height: auto; /* Автоматична висота */
+    }
+
+    main {
+        margin-top: 120px;
+        height: auto; /* Автоматична висота */
+    }
+
+    .content {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .btn {
+        width: 20%; /* Кнопка на всю ширину */
+        text-align: center;
+        font-size: 10px;
+    }
+
+    footer {
+
+        padding: 15px;
+    }
+
+
+    #contact-page {
+        justify-content: space-between;
+        align-items: flex-start;
+        height: 150vh; /* Робимо всю висоту екрану */
+        width: 100%;
+    }
+        .contact-header {
+            display: flex;
+            align-items: center; /* Вирівнює логотип і заголовок по центру */
+            background: rgb(0, 0, 0);
+            padding: 20px;
+            gap: 10px; /* Відступ між елементами */
+        }
+
+        .contact-container {
+            width: 90%;
+            max-width: 600px; /* На великих екранах обмежуємо ширину */
+            display: inline-block;
+            align-items: center;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.7); /* Затемнений фон */
+            border-radius: 10px;
+        }
+
+        /* Поля вводу */
+        input, textarea {
+            width: 90%;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Забороняємо змінювати розмір текстового поля */
+        textarea {
+            resize: none;
+        }
+
+        /* Кнопка */
+        button {
+            background-color: #ff6600;
+            color: white;
+            padding: 12px;
+            width: 200px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #cc5500;
+        }
+
+        /* Карта */
+        iframe {
+            margin-left: 15px;
+            place-self: center;
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+    }
+
+
